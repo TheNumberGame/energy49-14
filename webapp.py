@@ -3,6 +3,9 @@ import os, json
 
 app = Flask(__name__)
 
+with open('energy.json') as energy_data:
+       energy = json.load(energy_data)
+
 @app.route("/")
 def render_main():
     return render_template('Home.html')
