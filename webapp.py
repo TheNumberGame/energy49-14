@@ -14,7 +14,7 @@ def us_importEngery():
        imprts = energy['u\'imports']
        randKey = random.choice(list(imprts.keys()))
        
-       return randKey + ": "
+       return randKey + ": " imprts[randKey]
        
 
 if __name__=="__main__":
