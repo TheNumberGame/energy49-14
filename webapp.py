@@ -22,13 +22,13 @@ def get_year_options(default = None):
     for c in energy:
         if not c["year"] == state:
             if c["year"] == default:  
-              options += Markup("<option selected value=\"" + c["year"] + "\">" + c["year"] + "</option>")
+              #options += Markup("<option selected value=\"" + c["year"] + "\">" + c["year"] + "</option>")
             else:
-              options += Markup("<option value=\"" + c["year"] + "\">" + c["year"] + "</option>")
+              #options += Markup("<option value=\"" + c["year"] + "\">" + c["year"] + "</option>")
             state = c["year"]
             #print(options)
     
-    return options
+    #return options
 
 def us_importEngery(year):
        imprts = energy[1949-year]["imports"]
