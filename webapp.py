@@ -34,7 +34,7 @@ def us_importEngery(year):
        imprts = energy[1949-year]["imports"]
        randKey = random.choice(list(imprts.keys()))
        
-       return randKey + ": " imprts[randKey] + " Quadrillion BTUs" 
+       return randKey + ": " + imprts[randKey] + " Quadrillion BTUs" 
        
 
 if __name__=="__main__":
