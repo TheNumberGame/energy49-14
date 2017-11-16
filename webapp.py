@@ -10,11 +10,11 @@ with open('energy.json') as energy_data:
 def render_main():
     return render_template('Home.html')
 
-def us_importEngery():
-       imprts = energy['u\'imports']
+def us_importEngery(year):
+       imprts = energy[1949-year]["imports"]
        randKey = random.choice(list(imprts.keys()))
        
-       return randKey + ": " imprts[randKey]
+       return randKey + ": " imprts[randKey] + " Quadrillion BTUs" 
        
 
 if __name__=="__main__":
