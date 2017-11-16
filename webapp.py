@@ -11,7 +11,7 @@ def render_main():
     return render_template('Home.html')
 
 @app.route("/importEnergy")
-def render_import():
+def render_imports():
        us_imp = request.args["year"]
        return rendr_template('importEnergy.html', year = get_year_options(us_imp))
 
