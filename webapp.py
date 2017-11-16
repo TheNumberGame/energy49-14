@@ -13,19 +13,18 @@ def render_main():
 @app.route("/importEnergy")
 def render_imports():
        us_imp = request.args["year"]
-       return rendr_template('importEnergy.html', year = get_year_options(us_imp))
+       return rendr_template('importEnergy.html')
 
-def get_year_options(default = None):
-    
-    options = ""
-    state = ""
-    for c in energy:
-        if not c["year"] == state:
-            if c["year"] == default:  
+#def get_year_options(default = None):    
+#    options = ""
+#    state = ""
+#    for c in energy:
+#        if not c["year"] == state:
+#            if c["year"] == default:  
               #options += Markup("<option selected value=\"" + c["year"] + "\">" + c["year"] + "</option>")
-            else:
+#            else:
               #options += Markup("<option value=\"" + c["year"] + "\">" + c["year"] + "</option>")
-            state = c["year"]
+#            state = c["year"]
             #print(options)
     
     #return options
