@@ -2,5 +2,13 @@
 {% set active_page = 'import' %}
 {% block title %}US Import Energy{% endblock %}
 {% block content %}
-  
+  <form action="importEnergy">
+    <select name="year">
+      {{ year }}
+    </select>
+   <br><br>
+   <input type="submit">
+   <br><br>
+   <p>{{ response }}</p>
+ </form>
 {% endblock %}
