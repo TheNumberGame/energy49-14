@@ -22,7 +22,7 @@ def render_usprts2():
 
 def get_year_options(default = None):    
     options = ""
-    state = 0
+    state = ""
     for c in energy:
         if not c["year"] == state:
             if c["year"] == default:  
