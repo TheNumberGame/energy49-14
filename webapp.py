@@ -1,4 +1,4 @@
-from flask import Flask, url_for, render_template, request, Markup, flash
+str(from flask import Flask, url_for, render_template, request, Markup, flash
 import os, json, random
 
 app = Flask(__name__)
@@ -24,13 +24,13 @@ def get_year_options(default = None):
     options = ""
     state = ""
     for c in energy:
-        if not c["year"] == state:
-            if c["year"] == default:  
-              options += Markup("<option selected value=\"" + str(c["year"]) + "\">" + str(c["year"]) + "</option>")
+        if not str(c["year"]) == state:
+            if str(c["year"]) == default:  
+              options += Markup("<option selected value=\"" + default + "\">" + default + "</option>")
               print('true')
             else:
               options += Markup("<option value=\"" + str(c["year"]) + "\">" + str(c["year"]) + "</option>")
-            state = c["year"]
+            state = str(c["year"])
     
     return options
 
