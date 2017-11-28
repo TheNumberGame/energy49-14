@@ -10,16 +10,14 @@ with open('energy.json') as energy_data:
 def render_main():
     return render_template('Home.html')
 
-@app.route("/UsImprt1")
-def render_usprts1():
-       return render_template('importEnergy.html', year = get_year_options())
-
-@app.route("/UsImprt2")
+@app.route("/UsImprt")
 def render_usprts2():
-       us_imp = request.args["year"]
-       print(us_imp)
-       return render_template('importEnergy.html', year = get_year_options(us_imp))
-
+	try:   
+	    us_imp = request.args["year"]
+	    return render_template('importEnergy.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
+	except:
+		return render_template('importEnergy.html', year = get_year_options())
+	
 def get_year_options(default = None):
     options = ""
     state = ""
@@ -35,10 +33,10 @@ def get_year_options(default = None):
     return options
 
 def us_importEngery(year):
-       imprts = energy[1949-year]["imports"]
+       imprts = energy[1949-int(year)]["data"]["imports"]
        randKey = random.choice(list(imprts.keys()))
 
-       return randKey + ": " + imprts[randKey] + " Quadrillion BTUs"
+       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
 
 
 if __name__=="__main__":
