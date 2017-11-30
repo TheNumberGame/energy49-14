@@ -16,7 +16,7 @@ def render_usprts2():
 	    us_imp = request.args["year"]
 	    return render_template('importEnergy.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
 	except:
-		return render_template('importEnergy.html', year = get_year_options())
+	    return render_template('importEnergy.html', year = get_year_options())
 	
 def get_year_options(default = None):
     options = ""
