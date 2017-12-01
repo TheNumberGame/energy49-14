@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% set active_page = 'us_prCn' %}
+{% block title %}US Production and Consumption of Energy{% endblock %}
+{% block content %}
+ <form action="/UsPrCn">
+    <select name="year">
+      {{ year }}
+    </select>
+   <br><br>
+   <input type="submit">
+   <br><br>
+   <p>{{ response }}</p>
+ </form>
+{% endblock %}
