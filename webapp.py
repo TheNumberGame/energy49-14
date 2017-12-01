@@ -11,12 +11,20 @@ def render_main():
     return render_template('Home.html')
 
 @app.route("/UsImprt")
-def render_usprts2():
+def render_usprts():
 	try:   
 	    us_imp = request.args["year"]
 	    return render_template('importEnergy.html', year = get_year_options(us_imp), response = us_importEngery(us_imp))
 	except:
 	    return render_template('importEnergy.html', year = get_year_options())
+
+@app.route("/UsXprt")
+def render_usprts2():
+	try:   
+	    us_xmp = request.args["year"]
+	    return render_template('exportEnergy.html', year = get_year_options(us_imp), response = us_xportEngery(us_imp))
+	except:
+	    return render_template('exportEnergy.html', year = get_year_options())
 	
 def get_year_options(default = None):
     options = ""
@@ -34,6 +42,12 @@ def get_year_options(default = None):
 
 def us_importEngery(year):
        imprts = energy[1949-int(year)]["data"]["imports"]
+       randKey = random.choice(list(imprts.keys()))
+
+       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+
+def us_xportEngery(year):
+       imprts = energy[1949-int(year)]["data"]["exports"]
        randKey = random.choice(list(imprts.keys()))
 
        return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
