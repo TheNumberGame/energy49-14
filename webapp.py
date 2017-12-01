@@ -60,6 +60,16 @@ def us_xportEngery(year):
 
        return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
 
+def us_prCnEnergy(year)
+	imprts = energy[1949-int(year)]["data"]["production"]
+	randKey = random.choice(list(imprts.keys()))
+	
+	try:
+	    imprts2 = energy[1949-int(year)]["data"]["consumption"][randKey]
+	except:
+	    imprts2 = "None"
+	
+	return "US Production: " +  randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs" + " US Consumtion" + randkey + imprts2
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
