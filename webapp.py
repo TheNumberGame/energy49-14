@@ -22,7 +22,7 @@ def render_usprts():
 def render_usprts2():
 	try:   
 	    us_xmp = request.args["year"]
-	    return render_template('exportEnergy.html', year = get_year_options(us_imp), response = us_xportEngery(us_imp))
+	    return render_template('exportEnergy.html', year = get_year_options(us_xmp), response = us_xportEngery(us_xmp))
 	except:
 	    return render_template('exportEnergy.html', year = get_year_options())
 	
