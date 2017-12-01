@@ -25,6 +25,14 @@ def render_usprts2():
 	    return render_template('exportEnergy.html', year = get_year_options(us_xmp), response = us_xportEngery(us_xmp))
 	except:
 	    return render_template('exportEnergy.html', year = get_year_options())
+
+@app.route("/UsPrCn")
+def render_usprts3():
+	try:   
+	    us_pc = request.args["year"]
+	    return render_template('prCnEnergy.html', year = get_year_options(us_pc), response = us_xportEngery(us_pc))
+	except:
+	    return render_template('prCnEnergy.html', year = get_year_options())
 	
 def get_year_options(default = None):
     options = ""
