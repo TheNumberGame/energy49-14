@@ -28,10 +28,10 @@ def render_usprts2():
 
 @app.route("/UsPrCn")
 def render_usprts3():
-	try:   
-	    us_pc = request.args["year"]
-	    return render_template('prCnEnergy.html', year = get_year_options(us_pc), response = us_xportEngery(us_pc))
-	except:
+	#try:   
+	#    us_pc = request.args["year"]
+	#    return render_template('prCnEnergy.html', year = get_year_options(us_pc), response = us_xportEngery(us_pc))
+	#except:
 	    return render_template('prCnEnergy.html', year = get_year_options())
 	
 def get_year_options(default = None):
@@ -60,7 +60,7 @@ def us_xportEngery(year):
 
        return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
 
-def us_prCnEnergy(year)
+#def us_prCnEnergy(year)
 	#imprts = energy[1949-int(year)]["data"]["production"]
 	#randKey = random.choice(list(imprts.keys()))
 	
@@ -70,7 +70,7 @@ def us_prCnEnergy(year)
 	#    imprts2 = "None"
 	
 	#return "US Production: " +  randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs" + " US Consumtion" + randkey + imprts2
-	return None
+	#return None
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
