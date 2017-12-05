@@ -70,7 +70,7 @@ def us_prCnEnergy(year)
 	    imprts2 = "None"
 	
 	return "US Production: " +  randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs" + " US Consumtion" + randkey + imprts2
-	return None
+
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
