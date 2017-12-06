@@ -30,7 +30,7 @@ def render_usprts2():
 def render_usprts3():
 	try:   
 	    us_pc = request.args["year"]
-	    return render_template('prCnEnergy.html', year = get_year_options(us_pc), response = us_xportEngery(us_pc))
+	    return render_template('prCnEnergy.html', year = get_year_options(us_pc), response = us_prCnEnergy(us_pc))
 	except:
 	    return render_template('prCnEnergy.html', year = get_year_options())
 	
