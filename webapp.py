@@ -31,7 +31,8 @@ def render_usprts3():
 	try:   
 	    us_pc = request.args["year"]
 	    return render_template('prCnEnergy.html', year = get_year_options(us_pc), response = us_prCnEnergy(us_pc))
-	except:
+	except Exception as e:
+	    print e
 	    return render_template('prCnEnergy.html', year = get_year_options())
 	
 def get_year_options(default = None):
