@@ -70,7 +70,7 @@ def us_prCnEnergy(year):
 	except:
 	    imprts2 = "None"
 	
-	return "US Production: " +  randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs; " + " US Consumtion " + randKey + " " + str(imprts2)
+	return "US Production: " +  randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs; " + " US Consumtion " + randKey + " " + str(imprts2) + " Quadrillion BTUs."
 
 
 if __name__=="__main__":
