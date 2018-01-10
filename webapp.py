@@ -53,7 +53,7 @@ def us_importEngery(year):
        imprts = energy[1949-int(year)]["data"]["imports"]
        randKey = random.choice(list(imprts.keys()))
 
-       return randKey + ": " + str(imprts[randKey]) + " Quadrillion BTUs"
+       return "US imported " + str(imprts[randKey]) + " Quadrillion BTUs" + " of " + randKey + " in " + year
 
 def us_xportEngery(year):
        imprts = energy[1949-int(year)]["data"]["exports"]
